@@ -22,7 +22,7 @@ export const WORKFLOW_DATA: Phase[] = [
       {
         id: 's1.1',
         title: 'Proposta de jornada / activitat',
-        trigger: 'La territorial vol organitzar una activitat.',
+        trigger: 'El col·laborador vol organitzar una activitat.',
         description: 'Enviament de mail de notificació de nova jornada amb format estàndard.',
         actionItems: [
           {
@@ -62,7 +62,7 @@ export const WORKFLOW_DATA: Phase[] = [
         actionItems: [
           {
             id: 't2.1.1',
-            text: 'Duplicar carpeta base (ex.: 20260102_Exemple)',
+            text: 'Duplicar carpeta base 20260102_Exemple',
             isCompleted: false
           },
           {
@@ -87,12 +87,12 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't2.2.2',
             text: 'Redactar Convocatòria',
-            templates: ['Plantilla_Convocatoria (AAAAMMDD_Keywords_Convocatoria)'],
+            templates: ['Plantilla_Convocatoria'],
             isCompleted: false
           },
           {
             id: 't2.2.3',
-            text: 'Configurar Formulari d’inscripció',
+            text: 'Duplicar i Configurar Formulari d’Inscripció',
             templates: ['Forms Inscripció Jornades'],
             isCompleted: false
           }
@@ -170,7 +170,7 @@ export const WORKFLOW_DATA: Phase[] = [
             isCompleted: false
           }
         ],
-        outputs: ['Pack complet d\'evidències digitals']
+        outputs: ['Pack complet d\'evidències digitals amb nomenclatura estàndard']
       }
     ]
   },
@@ -199,20 +199,6 @@ export const WORKFLOW_DATA: Phase[] = [
           }
         ],
         outputs: ['Fitxer Excel de valoració.']
-      },
-      {
-        id: 's4.2',
-        title: 'Fitxa d’activitat grupal',
-        description: 'Reporting final de l\'activitat.',
-        actionItems: [
-          {
-            id: 't4.2.1',
-            text: 'Omplir Plantilla_Actividades_Grupales',
-            details: ['Dades bàsiques', 'Resultats', 'Participants', 'Tipologia', 'Evidències associades'],
-            isCompleted: false
-          }
-        ],
-        outputs: ['Activitat completament documentada.']
       }
     ]
   },
@@ -232,7 +218,7 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't5.1.1',
             text: 'Registrar accions a Plantilla_Actividades_Difusión',
-            details: ['Xarxes socials', 'Web', 'Newsletters', 'Emails territorials'],
+            details: ['Xarxes socials', 'Web', 'Newsletters', 'Emails'],
             isCompleted: false
           }
         ],
@@ -255,7 +241,12 @@ export const WORKFLOW_DATA: Phase[] = [
         actionItems: [
           {
             id: 't6.1.1',
-            text: 'Utilitzar Plantilla_Asesoramientos',
+            text: 'Compartir Plantilla_Asesoramientos amb els assessors',
+            isCompleted: false
+          },
+          {
+            id: 't6.1.3',
+            text: 'Sol·licitud d’assessorament per part de la PIME',
             isCompleted: false
           },
           {
@@ -263,8 +254,6 @@ export const WORKFLOW_DATA: Phase[] = [
             text: 'Generar documents obligatoris',
             templates: [
               'AAAAMMDD_Asesoramiento_NomPYME',
-              'AAAAMMDD_Formulario_NomPYME',
-              'AAAAMMDD_Solicitud_NomPYME',
               'AAAAMMDD_Report_NomPYME'
             ],
             isCompleted: false
@@ -313,17 +302,95 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't7.2.1',
             text: 'Facturar Assessoraments',
-            details: ['Concepte: Asesoramiento a (nombre empresas) en el marco de la Oficina Acelera Pyme de Foment del Treball…'],
+            details: ['Concepte: Asesoramiento a (nombre empresas) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada por Red.es, destinada a construir el ecosistema de referencia de la transformación digital de las pymes.'],
             isCompleted: false
           },
           {
             id: 't7.2.2',
             text: 'Facturar Ponències',
-            details: ['Concepte: Ponencia en la jornada (nombre jornada y fecha) en el marco de la Oficina Acelera Pyme de Foment del Treball…'],
+            details: ['Concepte: Ponencia en la jornada (nombre jornada y fecha) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada por Red.es, destinada a construir el ecosistema de referencia de la transformación digital de las pymes.'],
             isCompleted: false
           }
         ],
         outputs: ['Factures enviades.']
+      }
+    ]
+  },
+  {
+    id: 'p8',
+    number: 'R',
+    title: 'Recursos i Plantilles',
+    type: PhaseType.RESOURCES,
+    icon: Briefcase,
+    color: 'bg-slate-600',
+    steps: [
+      {
+        id: 's8.1',
+        title: 'Estructura de Carpetes',
+        description: 'Organització dels fitxers del projecte.',
+        actionItems: [
+            {
+                id: 't8.1.1',
+                text: 'Estructura Base: 20260102_Exemple',
+                details: [
+                    '01. Planificació',
+                    '02. Materials Difusió',
+                    '03. Inscripcions',
+                    '04. Acte (Fotos, Vídeos)',
+                    '05. Tancament i Facturació'
+                ],
+                isCompleted: false
+            }
+        ],
+        outputs: []
+      },
+      {
+        id: 's8.2',
+        title: 'Relació de Plantilles',
+        description: 'Llistat complet de documents i el seu ús.',
+        actionItems: [
+            {
+                id: 't8.2.1',
+                text: 'Difusió i Captació',
+                templates: [
+                    'Canva_OAP_Banners_Jornades_Organització (Disseny gràfic)',
+                    'Plantilla_Convocatoria (Text correu/web)',
+                    'Plantilla_Actividades_Difusión (Registre impactes)'
+                ],
+                isCompleted: false
+            },
+            {
+                id: 't8.2.2',
+                text: 'Gestió Jornada',
+                templates: [
+                    'Forms Inscripció Jornades (Captació dades)',
+                    'Plantilla_Firmas_Asistentes (Presencial)',
+                    'Registro_Actividades (Consolidació)',
+                    'Forms Satisfacció Jornades (Feedback)'
+                ],
+                isCompleted: false
+            },
+            {
+                id: 't8.2.3',
+                text: 'Continguts i Ponents',
+                templates: [
+                    'Plantilla_Ponentes (Fitxa tècnica)',
+                    'Plantilla_Presentación (PPT Corporatiu)'
+                ],
+                isCompleted: false
+            },
+            {
+                id: 't8.2.4',
+                text: 'Assessoraments',
+                templates: [
+                    'Plantilla_Asesoramientos (Guió)',
+                    'AAAAMMDD_Asesoramiento_NomPYME (Fitxa)',
+                    'AAAAMMDD_Report_NomPYME (Informe Final)'
+                ],
+                isCompleted: false
+            }
+        ],
+        outputs: []
       }
     ]
   }

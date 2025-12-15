@@ -97,9 +97,10 @@ const App: React.FC = () => {
               {activeTab === PhaseType.STANDARD && 'Jornada Estàndard'}
               {activeTab === PhaseType.TRANSVERSAL && 'Transversal'}
               {activeTab === PhaseType.MONTHLY && 'Tancament Mensual'}
+              {activeTab === PhaseType.RESOURCES && 'Recursos i Plantilles'}
             </h2>
             <p className="text-slate-500 mt-2 max-w-2xl">
-              Guia pas a pas per a l'execució de les organitzacions territorials del projecte Foment Oficina Acelera Pyme.
+              Guia pas a pas per a l'execució dels col·laboradors en el projecte Foment Oficina Acelera Pyme.
             </p>
           </div>
           

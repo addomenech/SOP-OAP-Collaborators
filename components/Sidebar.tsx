@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, Users, CalendarCheck, BarChart3, Info } from 'lucide-react';
+import { LayoutDashboard, Users, CalendarCheck, BarChart3, Info, Briefcase } from 'lucide-react';
 import { PhaseType } from '../types';
 
 interface SidebarProps {
@@ -10,8 +10,6 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, completedTasks, totalTasks }) => {
-  const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
-
   return (
     <div className="w-64 bg-white h-screen border-r border-slate-200 flex flex-col fixed left-0 top-0 z-20">
       <div className="p-6 border-b border-slate-100">
@@ -68,23 +66,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, completedTas
           <CalendarCheck size={18} />
           Tancament Mensual
         </button>
-      </nav>
 
-      <div className="p-4 bg-slate-50 border-t border-slate-200">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-xs font-semibold text-slate-600">Progrés Total</span>
-          <span className="text-xs font-bold text-blue-600">{progress}%</span>
-        </div>
-        <div className="w-full bg-slate-200 rounded-full h-2">
-          <div 
-            className="bg-blue-600 h-2 rounded-full transition-all duration-500" 
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-        <div className="mt-2 text-xs text-slate-500">
-          {completedTasks} de {totalTasks} tasques completades
-        </div>
-      </div>
+        <button
+          onClick={() => setActiveTab(PhaseType.RESOURCES)}
+          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+            activeTab === PhaseType.RESOURCES ? 'bg-blue-50 text-blue-700' : 'text-slate-600 hover:bg-slate-50'
+          }`}
+        >
+          <Briefcase size={18} />
+          Recursos i Plantilles
+        </button>
+      </nav>
     </div>
   );
 };

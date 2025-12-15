@@ -3,7 +3,8 @@ import { LucideIcon } from 'lucide-react';
 export enum PhaseType {
   STANDARD = 'STANDARD',
   TRANSVERSAL = 'TRANSVERSAL',
-  MONTHLY = 'MONTHLY'
+  MONTHLY = 'MONTHLY',
+  RESOURCES = 'RESOURCES'
 }
 
 export interface Task {
