@@ -62,7 +62,8 @@ export const WORKFLOW_DATA: Phase[] = [
         actionItems: [
           {
             id: 't2.1.1',
-            text: 'Duplicar carpeta base 20260102_Exemple',
+            text: 'Duplicar carpeta base',
+            templates: ['20260102_Exemple'],
             isCompleted: false
           },
           {
@@ -81,7 +82,7 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't2.2.1',
             text: 'Crear Banner',
-            templates: ['Canva_OAP_Banners_Jornades_Organització'],
+            templates: ['OAP_Banners_Jornades'],
             isCompleted: false
           },
           {
@@ -131,7 +132,7 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't3.1.3',
             text: 'Consolidació: Excel de PIMEs computades',
-            templates: ['Registro_Actividades'],
+            templates: ['Plantilla_Registro_Actividades'],
             isCompleted: false
           }
         ],
@@ -161,7 +162,7 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't3.2.4',
             text: 'Presentació Power Point',
-            templates: ['Plantilla_Presentación'],
+            templates: ['Plantilla_PowerPoint'],
             isCompleted: false
           },
           {
@@ -199,6 +200,20 @@ export const WORKFLOW_DATA: Phase[] = [
           }
         ],
         outputs: ['Fitxer Excel de valoració.']
+      },
+      {
+        id: 's4.2',
+        title: 'Fitxa d’activitat grupal',
+        description: 'Reporting final de l\'activitat.',
+        actionItems: [
+          {
+            id: 't4.2.1',
+            text: 'Omplir Plantilla_Actividades_Grupales',
+            details: ['Dades bàsiques', 'Resultats', 'Participants', 'Tipologia', 'Evidències associades'],
+            isCompleted: false
+          }
+        ],
+        outputs: ['Activitat completament documentada.']
       }
     ]
   },
@@ -241,7 +256,8 @@ export const WORKFLOW_DATA: Phase[] = [
         actionItems: [
           {
             id: 't6.1.1',
-            text: 'Compartir Plantilla_Asesoramientos amb els assessors',
+            text: 'Compartir plantilla amb els assessors',
+            templates: ['Plantilla_Asesoramientos'],
             isCompleted: false
           },
           {
@@ -277,11 +293,6 @@ export const WORKFLOW_DATA: Phase[] = [
         description: 'Revisió final abans de tancar el mes.',
         actionItems: [
           {
-            id: 't7.1.1',
-            text: 'Actualitzar Plantilla Jornades',
-            isCompleted: false
-          },
-          {
             id: 't7.1.2',
             text: 'Actualitzar Activitats de captació i difusió',
             isCompleted: false
@@ -297,7 +308,7 @@ export const WORKFLOW_DATA: Phase[] = [
       {
         id: 's7.2',
         title: 'Facturació',
-        description: 'Pagament: dia 10 del mes següent.',
+        description: 'Enviament: Dia 28 Pagament: Dia 10 del mes següent.',
         actionItems: [
           {
             id: 't7.2.1',
@@ -326,18 +337,27 @@ export const WORKFLOW_DATA: Phase[] = [
     steps: [
       {
         id: 's8.1',
-        title: 'Estructura de Carpetes',
-        description: 'Organització dels fitxers del projecte.',
+        title: 'Estructura Principal (Arrel)',
+        description: 'Organització de carpetes i documents globals al SharePoint.',
         actionItems: [
             {
                 id: 't8.1.1',
-                text: 'Estructura Base: 20260102_Exemple',
+                text: 'Carpetes Principals',
                 details: [
-                    '01. Planificació',
-                    '02. Materials Difusió',
-                    '03. Inscripcions',
-                    '04. Acte (Fotos, Vídeos)',
-                    '05. Tancament i Facturació'
+                    '📁 Asessoraments',
+                    '📁 Jornades',
+                    '📁 Materials Gràfics'
+                ],
+                isCompleted: false
+            },
+            {
+                id: 't8.1.2',
+                text: 'Documents Transversals',
+                details: [
+                    '📄 Plantilla_Actividades_Difusión',
+                    '📄 Plantilla_Ponentes',
+                    '📊 Plantilla_Registro_Actividades',
+                    '🖼️ OAP_Banners_Jornades'
                 ],
                 isCompleted: false
             }
@@ -346,46 +366,33 @@ export const WORKFLOW_DATA: Phase[] = [
       },
       {
         id: 's8.2',
-        title: 'Relació de Plantilles',
-        description: 'Llistat complet de documents i el seu ús.',
+        title: 'Contingut per Carpetes',
+        description: 'Detall dels fitxers específics dins de cada carpeta.',
         actionItems: [
             {
                 id: 't8.2.1',
-                text: 'Difusió i Captació',
-                templates: [
-                    'Canva_OAP_Banners_Jornades_Organització (Disseny gràfic)',
-                    'Plantilla_Convocatoria (Text correu/web)',
-                    'Plantilla_Actividades_Difusión (Registre impactes)'
+                text: '📁 Jornades / 20260102_Exemple',
+                details: [
+                    '📄 Plantilla_Convocatoria',
+                    '📄 Plantilla_Firmas_Asistentes',
+                    '📊 Plantilla_PowerPoint'
                 ],
                 isCompleted: false
             },
             {
                 id: 't8.2.2',
-                text: 'Gestió Jornada',
-                templates: [
-                    'Forms Inscripció Jornades (Captació dades)',
-                    'Plantilla_Firmas_Asistentes (Presencial)',
-                    'Registro_Actividades (Consolidació)',
-                    'Forms Satisfacció Jornades (Feedback)'
+                text: '📁 Materials Gràfics',
+                details: [
+                    '🖼️ Banners: Territorial, Blanc, Superior, Jornada',
+                    '🖼️ Logos: Acelera Pyme, Foment, Superior, Inferior'
                 ],
                 isCompleted: false
             },
             {
                 id: 't8.2.3',
-                text: 'Continguts i Ponents',
-                templates: [
-                    'Plantilla_Ponentes (Fitxa tècnica)',
-                    'Plantilla_Presentación (PPT Corporatiu)'
-                ],
-                isCompleted: false
-            },
-            {
-                id: 't8.2.4',
-                text: 'Assessoraments',
-                templates: [
-                    'Plantilla_Asesoramientos (Guió)',
-                    'AAAAMMDD_Asesoramiento_NomPYME (Fitxa)',
-                    'AAAAMMDD_Report_NomPYME (Informe Final)'
+                text: '📁 Asessoraments',
+                details: [
+                    '📂 AAAAMMDD_Asesoramiento_NomPYME'
                 ],
                 isCompleted: false
             }
