@@ -141,7 +141,7 @@ export const WORKFLOW_DATA: Phase[] = [
             isCompleted: false,
             details: [
               'Proves de micro, càmera i compartició de pantalla.',
-              'Suport inicial de Foment abans de cedir el control.'
+              'Suport inicial de Foment amb la benvinguda abans de cedir el control.'
             ]
           }
         ],
@@ -163,12 +163,6 @@ export const WORKFLOW_DATA: Phase[] = [
             text: 'Online: Excel Zoom amb emails',
             isCompleted: false,
             details: ['Aquest fitxer serà proporcionat per Foment per tal que pugueu procedir amb la consolidació.']
-          },
-          {
-            id: 't3.1.3',
-            text: 'Consolidació: Excel de PIMEs computades',
-            templates: ['Plantilla_Registro_Actividades'],
-            isCompleted: false
           }
         ],
         outputs: ['Llistat consolidat d\'assistents']
@@ -238,9 +232,16 @@ export const WORKFLOW_DATA: Phase[] = [
       },
       {
         id: 's4.2',
-        title: 'Fitxa d’activitat grupal',
-        description: 'Reporting final de l\'activitat.',
+        title: 'Fitxa d’activitat grupal i Reporting',
+        description: 'Consolidació de dades i reporting final de l\'activitat.',
         actionItems: [
+          {
+            id: 't3.1.3',
+            text: 'Consolidació: Excel de PIMEs computades',
+            templates: ['Plantilla_Registro_Actividades'],
+            isCompleted: false,
+            details: ['Consolidar els assistents reals vs els inscrits prèviament.']
+          },
           {
             id: 't4.2.1',
             text: 'Omplir Plantilla_Actividades_Grupales',
@@ -248,7 +249,7 @@ export const WORKFLOW_DATA: Phase[] = [
             isCompleted: false
           }
         ],
-        outputs: ['Activitat completament documentada.']
+        outputs: ['Activitat completament documentada i reportada.']
       }
     ]
   },
@@ -348,13 +349,13 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't7.2.1',
             text: 'Facturar Assessoraments',
-            details: ['Concepte: Asesoramiento a (nombre empresas) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada per Red.es, destinada a construir el ecosistema de referencia de la transformation digital de las pymes.'],
+            details: ['Concepte: Asesoramiento a (nombre empresas) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada por Red.es, destinada a construir el ecosistema de referencia de la transformación digital de las pymes.'],
             isCompleted: false
           },
           {
             id: 't7.2.2',
             text: 'Facturar Ponències',
-            details: ['Concepte: Ponencia en la jornada (nombre jornada y fecha) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada per Red.es, destinada a construir el ecosistema de referencia de la transformation digital de las pymes.'],
+            details: ['Concepte: Ponencia en la jornada (nombre jornada y fecha) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada por Red.es, destinada a construir el ecosistema de referencia de la transformación digital de las pymes.'],
             isCompleted: false
           }
         ],
