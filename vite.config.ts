@@ -1,5 +1,5 @@
 return {
-  base: '/SOP-OAP-Collaborators/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/SOP-OAP-Collaborators/' : '/',
   server: {
     port: 3000,
     host: '0.0.0.0',
