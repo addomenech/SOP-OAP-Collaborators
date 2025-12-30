@@ -102,6 +102,23 @@ export const WORKFLOW_DATA: Phase[] = [
           'Jornada publicada i oberta a inscripcions.',
           'Llista d’inscrits en temps real (Excel automàtic).'
         ]
+      },
+      {
+        id: 's2.3',
+        title: 'Gestió de Webinars (Online / Híbrid)',
+        description: 'Coordinació tècnica per a la creació de l\'enllaç de Zoom.',
+        actionItems: [
+          {
+            id: 't2.3.1',
+            text: 'Enviar correu amb el llistat d\'emails de ponents i organitzadors',
+            isCompleted: false,
+            details: ['Necessari per assignar rols de panelista i co-amfitrió a Zoom.']
+          }
+        ],
+        outputs: [
+          'Enllaç per a inscrits disponible',
+          'Enllaç de gestió per a ponents i staff rebut'
+        ]
       }
     ]
   },
@@ -113,6 +130,23 @@ export const WORKFLOW_DATA: Phase[] = [
     icon: Camera,
     color: 'bg-emerald-600',
     steps: [
+      {
+        id: 's3.0',
+        title: 'Preparació Tècnica (Online / Híbrid)',
+        description: 'Connexió prèvia per garantir el funcionament correcte.',
+        actionItems: [
+          {
+            id: 't3.0.1',
+            text: 'Connectar-se al webinar 15-25 minuts abans de l\'inici',
+            isCompleted: false,
+            details: [
+              'Proves de micro, càmera i compartició de pantalla.',
+              'Suport inicial de Foment abans de cedir el control.'
+            ]
+          }
+        ],
+        outputs: ['Entorn tècnic validat']
+      },
       {
         id: 's3.1',
         title: 'Control d’assistència',
@@ -127,7 +161,8 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't3.1.2',
             text: 'Online: Excel Zoom amb emails',
-            isCompleted: false
+            isCompleted: false,
+            details: ['Aquest fitxer serà proporcionat per Foment per tal que pugueu procedir amb la consolidació.']
           },
           {
             id: 't3.1.3',
@@ -313,13 +348,13 @@ export const WORKFLOW_DATA: Phase[] = [
           {
             id: 't7.2.1',
             text: 'Facturar Assessoraments',
-            details: ['Concepte: Asesoramiento a (nombre empresas) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada por Red.es, destinada a construir el ecosistema de referencia de la transformación digital de las pymes.'],
+            details: ['Concepte: Asesoramiento a (nombre empresas) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada per Red.es, destinada a construir el ecosistema de referencia de la transformation digital de las pymes.'],
             isCompleted: false
           },
           {
             id: 't7.2.2',
             text: 'Facturar Ponències',
-            details: ['Concepte: Ponencia en la jornada (nombre jornada y fecha) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada por Red.es, destinada a construir el ecosistema de referencia de la transformación digital de las pymes.'],
+            details: ['Concepte: Ponencia en la jornada (nombre jornada y fecha) en el marco de la Oficina Acelera Pyme de Foment del Treball, iniciativa del Ministerio de Transformación Digital y de la Función Pública, desarrollada per Red.es, destinada a construir el ecosistema de referencia de la transformation digital de las pymes.'],
             isCompleted: false
           }
         ],
